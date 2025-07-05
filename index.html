@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Image Spotter: Vision Test Game for VIT Chennai Clubs - A modern, interactive game platform for club activities" />
+    <meta name="keywords" content="image-spotter, game, react, typescript, education, vision-test, interactive, vit-chennai, clubs" />
+    <meta name="author" content="Meijeevan K.T" />
+    <meta name="theme-color" content="#3b82f6" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://sensational-bombolone-676b62.netlify.app/" />
+    <meta property="og:title" content="Image Spotter: VIT Chennai Clubs Vision Test Game" />
+    <meta property="og:description" content="Interactive image recognition game platform for VIT Chennai clubs" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://sensational-bombolone-676b62.netlify.app/" />
+    <meta property="twitter:title" content="Image Spotter: VIT Chennai Clubs Vision Test Game" />
+    <meta property="twitter:description" content="Interactive image recognition game platform for VIT Chennai clubs" />
+    
+    <!-- PWA -->
+    <link rel="manifest" href="/vit-image-spotter-game/manifest.json" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    
+    <title>Image Spotter: VIT Chennai Clubs Vision Test Game</title>
+    
+    <!-- Preload critical resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    
+    <!-- Critical CSS for faster loading -->
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background: #0a0a1a;
+        color: white;
+        font-family: system-ui, -apple-system, sans-serif;
+      }
+      
+      #root {
+        min-height: 100vh;
+      }
+      
+      .loading-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #0a0a1a 0%, #1a0a2a 50%, #2a0a3a 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+      }
+      
+      .loading-spinner {
+        width: 50px;
+        height: 50px;
+        border: 4px solid rgba(59, 130, 246, 0.3);
+        border-top: 4px solid #3b82f6;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+      
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+    </style>
+    <script type="module" crossorigin src="/vit-image-spotter-game/assets/index-BuhoGO8F.js"></script>
+    <link rel="modulepreload" crossorigin href="/vit-image-spotter-game/assets/vendor-D7amQhf0.js">
+    <link rel="modulepreload" crossorigin href="/vit-image-spotter-game/assets/icons-DqZ-p1_T.js">
+    <link rel="stylesheet" crossorigin href="/vit-image-spotter-game/assets/index-DD0xP-6_.css">
+  </head>
+  <body>
+    <div id="root">
+      <!-- Loading screen while React loads -->
+      <div class="loading-screen">
+        <div>
+          <div class="loading-spinner"></div>
+          <p style="margin-top: 20px; color: #3b82f6; text-align: center;">Loading Image Spotter...</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Remove loading screen once React takes over -->
+    <script>
+      window.addEventListener('load', () => {
+        setTimeout(() => {
+          const loadingScreen = document.querySelector('.loading-screen');
+          if (loadingScreen) {
+            loadingScreen.style.opacity = '0';
+            loadingScreen.style.transition = 'opacity 0.5s ease';
+            setTimeout(() => {
+              loadingScreen.remove();
+            }, 500);
+          }
+        }, 1000);
+      });
+    </script>
+  </body>
+</html>
